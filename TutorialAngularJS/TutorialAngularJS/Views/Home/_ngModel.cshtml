@@ -1,0 +1,32 @@
+﻿<h1>ngModel</h1>
+
+<p>
+    Su nombre: {{nombre}}
+    <br />
+    <input type="type" name="name" value="" ng-model="nombre" class="form-control" placeholder="Ingrese su nombre" />
+</p>
+
+<p>
+    Seleccione el pais: {{pais}}
+    <select class=" form-control" ng-model="pais">
+        <option value="1">Costa Rica</option>
+        <option value="2">Mexico</option>
+        <option value="3">Colombia</option>
+    </select>
+
+
+</p>
+
+<p>
+    Selecione una opcion:{{opc1}} {{opc2}}
+    <br />
+    <input type="checkbox" ng-model="opc1" /> Opcion 1
+    <input type="checkbox" ng-model="opc2" /> Opcion 2
+</p>
+
+<p>
+    Selecione Genero:{{genero}}
+    <br />
+    <input type="radio" name="name" value="Masculino" ng-model="genero" />
+    <input type="radio" name="name" value="Femenino"  ng-model="genero"/>
+</p>

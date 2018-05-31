@@ -4,11 +4,11 @@
 
 <h1>{{'hola mundo'}}</h1>
 <div class="container">
-    <h1>Filtros :: Filyter</h1>
+    @*<h1>Filtros :: Filyter</h1>
     <h4>en angularjs</h4>
-    <hr />
+    <hr />*@
 
-    <p>
+    @*<p>
         Filtro de texto {{'FerNanDo'}}
         <br />
         Filtro de texto {{'FerNanDo' | uppercase}}
@@ -31,6 +31,9 @@
         Filtro de numero: {{1350000}}
         <br />
         Filtro de numero: {{1350000 | number}}
-    </p>
+    </p>*@
+
+
+    @{Html.RenderPartial("_ngModel");}
 
 </div>
