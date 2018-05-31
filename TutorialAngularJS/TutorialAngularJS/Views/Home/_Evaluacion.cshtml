@@ -1,0 +1,25 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Nombre Completo:</label>
+            <input ng-model="nombre" class="form-control" type="text" name="name" value="" placeholder="" />
+        </div>
+
+        <div class="form-group">
+            <label>Lugar de Trabajo:</label>
+            <input ng-model="trabajo" class="form-control" type="text" name="name" value="" placeholder="" />
+        </div>
+
+        <div class="form-group">
+            <label>Salario en Dólares:</label>
+            <input ng-model="salario" class="form-control" type="text" name="name" value="" placeholder="" />
+        </div>
+    </div>
+</div>
+
+<br />
+
+<span class="help-block">Nombre: {{nombre | uppercase}}</span>
+<span class="help-block">Lugar de trabajo: {{trabajo}}</span>
+<span class="help-block">Salario: {{salario | currency}}</span>
