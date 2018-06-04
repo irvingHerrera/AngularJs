@@ -1,0 +1,52 @@
+﻿<div ng-controller="profesorCtrl as profe">
+    <h1>Profesor</h1>
+    <h4>{{profesor.nombre}}</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-sm-3">
+            <section class="panel">
+                <div class="panel-body" aling="center">
+                    <img class="img-circle" alt="Alternate Text" width="150" height="150" ng-src="{{profesor.foto}}" />
+
+                </div>
+            </section>
+        </div>
+        <div class="col-sm-9">
+            <section class="panel">
+                <div class="panel-body">
+                    {{profesor.bio}}
+                    <br />
+                    <br />
+                    <strong>Edad:</strong> {{profesor.edad}} años
+                    <br/>
+                    <button class="btn btn-primary" ng-click="editarProfesor()">Editar</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <section class="panel">
+                <div class="panel-body">
+                    Nombre:
+                    <input type="text" name="name" ng-model="editando.nombre" class="form-control" />
+                    <br />
+                    Edad:
+                    <input type="text" name="name" ng-model="editando.edad" class="form-control" />
+                    <br />
+
+                    Bio:
+                    <textarea class="form-control" rows="5" ng-model="editando.bio"></textarea>
+
+                    <br />
+                    <button class="btn btn-primary" ng-click="guardarCambio()">Guardar</button>
+                    <button class="btn btn-danger" ng-click="cancelarCambio()">Cancelar</button>
+
+                </div>
+            </section>
+        </div>
+    </div>        
+
+</div>

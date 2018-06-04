@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "ControlScope";
+}
+
+
+<div ng-app="app">
+    @{Html.RenderPartial("_AppController");}
+</div>
+
+@section Scripts{
+    <script>
+        var app = angular.module('app', []);
+
+        app.controller('profesorCtrl', function ($scope) {
+            $scope.profesor = profesorData;
+            $scope.editando = {};
+
+            $scope.editarProfesor = function () {
+                angular.copy($scope.profesor, $scope.editando);
+            };
+
+            $scope.guardarCambio = function () {
+                angular.copy($scope.editando, $scope.profesor);
+            };
+
+            $scope.cancelarCambio = function () {
+                $scope.editando = {};
+            };
+
+        });
+
+        var profesorData = {
+            nombre: "Irving Herrera",
+            bio: "Saludos estudiantes",
+            edad: 27,
+            foto: "/images/profesor.jpg"
+        };
+
+    </script>
+}
