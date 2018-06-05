@@ -38,5 +38,10 @@ namespace TutorialAngularJS.Controllers
         {
             return View();
         }
+
+        public IActionResult FiltroRepeticion()
+        {
+            return View();
+        }
     }
 }

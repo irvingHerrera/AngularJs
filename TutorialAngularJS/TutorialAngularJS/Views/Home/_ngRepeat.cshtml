@@ -1,0 +1,28 @@
+﻿<section>
+    <h1>ng-repeat</h1>
+    <h4>Manejando repeticiones</h4>
+    <hr />
+    <br />
+
+    <ul>
+        <li ng-repeat=" nombre in listado">
+            {{nombre}}
+        </li>
+    </ul>
+
+    <br/>
+
+    <table class="table table-striped">
+        <tr>
+            <td>Nombre</td>
+            <td>Edad</td>
+            <td>Clase</td>
+        </tr>
+        <tr ng-repeat="profesor in listadoProfesor.profesor">
+            <td>{{profesor.nombre}}</td>
+            <td>{{profesor.edad}}</td>
+            <td>{{profesor.clase}}</td>
+        </tr>
+    </table>
+
+</section>

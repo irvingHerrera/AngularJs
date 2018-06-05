@@ -1,0 +1,14 @@
+﻿<section>
+
+    <h1>ng-options</h1>
+    <h4>Repeticiones para elementos</h4>
+    <hr />
+
+    Selecione el pais: {{paisSeleccionado}}
+    <select ng-model="paisSeleccionado" class="form-control" 
+            ng-options="pais.id as pais.nombre for pais in paises">
+        <option value="" selected>Seleccione</option>
+        <option></option>
+    </select>
+
+</section>
