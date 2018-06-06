@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "HttpRequestView";
+}
+
+<h2>HttpRequestView</h2>
+
+<div class="row" ng-app="app">
+    <div class="col-md-12" ng-controller="mainCtrl">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>$HTTP Request</h1>
+                <h4>Data dinámica</h4>
+                <hr />
+
+                {{profesores | json}}
+
+            </div>
+        </div>
+
+        <hr />
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Detectar IPs</h1>
+                <h4>Manejo de recursos online</h4>
+                <hr />
+                {{geo | json}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        (function () {
+            var app = angular.module('app', []);
+
+            app.controller('mainCtrl', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
+
+                $scope.profesores = {};
+
+                $http.get('/json/profesores.json').then(function (data) {
+                    console.log("hola", data);
+                    $scope.profesores = data.data.profesores;
+                });
+
+                  //http://www.geoplugin.net/json.gp?jsoncallback=JSON_CALLBACK
+
+                $scope.geo = {};
+                var url = "http://www.geoplugin.net/json.gp"
+                url = $sce.trustAsResourceUrl(url);
+
+                $http.jsonp(url, { jsonpCallbackParam: 'jsoncallback' })
+                    .then(function (data) {
+                        console.log("data", data.data);
+                        $scope.geo = data.data;
+                    });
+
+            }]);
+
+        })();
+    </script>
+}
